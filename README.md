@@ -6,7 +6,6 @@ This module restricts repair order lines to only allow components from the produ
 - BoM component restriction for repair lines
 - Multi-level BoM support
 - Dynamic domain updates
-- Validation with user-friendly errors
 
 ## Installation
 1. Copy module to custom addons directory
@@ -16,5 +15,6 @@ This module restricts repair order lines to only allow components from the produ
 
 ## Usage
 1. Create repair order with a product that has BoM
-2. Add repair lines - only BoM components will be available
-3. Validation prevents limits to adding non-BoM components
+2. Products that have a BoM will be available in dropdown
+3. Add repair lines - only BoM components will be available
+4. Validation prevents limits to adding non-BoM components
