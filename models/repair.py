@@ -9,14 +9,12 @@ class RepairOrder(models.Model):
         global current_bom_line_product_ids
 
         if self.product_id: # type: ignore
-            print(f"Onchange product_id selected: {self.product_id.display_name} (ID: {self.product_id.id})") # type: ignore
+            print(f"Onchange product_id selected: {self.product_id.product_tmpl_id}{self.product_id.display_name} (ID: {self.product_id.id})") # type: ignore
 
             # Get the product template ID
-            tmpl_id = self.product_id.id # type: ignore
-        
-            print(f"Parent product template ID: {tmpl_id}")
+            tmpl_id = self.product_id.product_tmpl_id.id # type: ignore
 
-            # find the BoM for the product template
+            # BoM for the product template
             bom = self.env["mrp.bom"].search([("product_tmpl_id", "=", tmpl_id)], limit=1)
 
             if bom:
