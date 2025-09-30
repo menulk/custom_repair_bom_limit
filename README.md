@@ -1,4 +1,4 @@
-# For Custom Repair BoM Limit by Menushi Lakshika
+# Odoo 17 Custom Repair BoM Limit Module by Menushi Lakshika
 ## Overview
 This module restricts repair order lines to only allow components from the product's Bill of Materials.
 
@@ -18,3 +18,12 @@ This module restricts repair order lines to only allow components from the produ
 2. Products that have a BoM will be available in dropdown
 3. Add repair lines - only BoM components will be available
 4. Validation prevents limits to adding non-BoM components
+
+## Limitations
+1. Alternative BoMs not supported
+If a product has multiple BoMs, only the default BoM is considered. No option to select which BoM should apply.
+2. Limited to standard repair workflow
+Module tested mainly with repair.order (community edition). May need adjustments for enterprise features like inventory or operational integrations.
+3. Stock availability not validated
+Restriction ensures only BoM components are selectable, but does not check if the product is available in stock.
+
