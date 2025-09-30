@@ -34,7 +34,6 @@ class RepairOrder(models.Model):
                 current_bom_line_product_ids = []
 
 
-
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
