@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sub-BoM for LCD Screen -->
+        <record id="bom_lcd_screen" model="mrp.bom">
+            <field name="product_tmpl_id" ref="product_demo.product_laptop"/>
+            <field name="product_id" ref="product_demo.product_laptop"/>
+            <field name="product_qty">1.0</field>
+            <field name="type">normal</field>
+        </record>
+
+        <record id="bom_line_laptop_motherboard" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_lcd_screen"/>
+            <field name="product_id" ref="product_demo.product_motherboard"/>
+            <field name="product_qty">1.0</field>
+        </record>
+
+        <record id="bom_line_laptop_cpu" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_lcd_screen"/>
+            <field name="product_id" ref="product_demo.product_cpu"/>
+            <field name="product_qty">1.0</field>
+        </record>
+
+        <record id="bom_line_laptop_ram" model="mrp.bom.line">
+            <field name="bom_id" ref="bom_lcd_screen"/>
+            <field name="product_id" ref="product_demo.product_ram"/>
+            <field name="product_qty">2.0</field>
+        </record>
+
+        <!-- Demo Repair Order -->
+        <record id="repair_order_demo" model="mrp.repair">
+            <field name="name">DEMO-REPAIR-001</field>
+            <field name="product_id" ref="product_demo.product_laptop"/>
+            <field name="product_qty">1.0</field>
+            <field name="state">draft</field>
+            <field name="invoice_method">none</field>
+        </record>
+    </data>
+</odoo>

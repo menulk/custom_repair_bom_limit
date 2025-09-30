@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit the repair order form view to add domain restriction -->
+        <record id="view_repair_order_form_inherit" model="ir.ui.view">
+            <field name="name">mrp.repair.form.inherit.bom.limit</field>
+            <field name="model">mrp.repair</field>
+            <field name="inherit_id" ref="mrp_repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Add a computed domain to the operations field -->
+                <field name="operations" position="attributes">
+                    <attribute name="context">{'default_repair_id': id}</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
